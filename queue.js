@@ -12,17 +12,16 @@ class Queue {
 
     enqueue(item) {
         if (this.isEmpty()) {
-            this.front++
+            this.queue[this.rear] = item
             this.rear++
             this.size++
-            this.queue[this.rear] = item
             return
         }
         if (this.isFull()) {
             return "It is not possible to enqueue items. The queue is already full"
         }
-        this.rear = (this.rear + 1) % this.capacity
         this.queue[this.rear] = item
+        this.rear = (this.rear + 1) % this.capacity
         this.size++
     }
 
@@ -37,7 +36,7 @@ class Queue {
     }
 
     print() {
-        console.log(this.queue.slice(this.front, ++this.rear))
+        console.log(this.queue.slice(this.front, this.rear))
     }
 }
 
