@@ -1,7 +1,7 @@
 class Queue {
     constructor(capacity){
-        this.front = -1
-        this.rear = -1
+        this.front = 0
+        this.rear = 0
         this.size = 0
         this.capacity = capacity
         this.queue = []
@@ -56,4 +56,9 @@ for(let i = 0; i < 5; i++){
 
 myQueue.print() // [ 6, 7, 8, 9, 10 ]
 
+for(let i = 0; i < 5; i++){
+    myQueue.enqueue(i)
+}
 
+
+myQueue.print() // [ 6, 7, 8, 9, 10, 0, 1, 2, 3, 4 ]
